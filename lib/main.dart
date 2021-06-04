@@ -10,7 +10,7 @@ class App extends StatelessWidget {
     return Text(
       "Namaste Flutter",
       textDirection: TextDirection.ltr,
-      style: TextStyle(fontSize: 50, color: Colors.pink),
+      style: TextStyle(fontSize: 100, color: Colors.pink),
     );
   }
 }
