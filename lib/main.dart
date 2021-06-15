@@ -16,7 +16,7 @@ class App extends StatelessWidget {
             padding: EdgeInsets.all(20.0),
             margin: EdgeInsets.only(bottom: 20.0),
             child: Text(
-              "Who united nepal?",
+              "Who unified nepal?",
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
