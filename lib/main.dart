@@ -115,6 +115,46 @@ class HomePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 print("Submit pressed");
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return Center(
+                        child: Container(
+                          child: ElevatedButton(
+                            child: Text("Cancel"),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ),
+                      );
+                      return AlertDialog(
+                        title: Text("Submit quiz"),
+                        content: Text("Are you sure you want to submit?"),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              print("ok working on job");
+                              Navigator.pop(context);
+                            },
+                            child: Text("OK"),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text("Cancel"),
+                          ),
+                        ],
+                      );
+                    });
+                // ScaffoldMessenger.of(context).showSnackBar(
+                //   SnackBar(
+                //     content:
+                //         Text("You cannot submit without selecting an answer"),
+                //     backgroundColor: Colors.red,
+                //   ),
+                // );
               },
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(150, 60),
