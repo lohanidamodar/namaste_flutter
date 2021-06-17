@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:namaste_flutter/ui/pages/profile.dart';
 
 void main() {
   runApp(App());
@@ -8,6 +9,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.red),
       home: HomePage(),
     );
@@ -20,6 +22,19 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Nepali Quiz"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => ProfilePage(),
+                ),
+              );
+            },
+            icon: Icon(Icons.person),
+          )
+        ],
       ),
       body: Container(
         padding: EdgeInsets.all(20.0),
