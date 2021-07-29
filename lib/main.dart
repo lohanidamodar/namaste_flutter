@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:namaste_flutter/ui/pages/login_page.dart';
 import 'package:namaste_flutter/ui/pages/profile.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.red),
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }
