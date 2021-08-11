@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../res/assets.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -19,6 +20,16 @@ class _LoginPageState extends State<LoginPage> {
       body: ListView(
         padding: EdgeInsets.all(16.0),
         children: [
+          Image.asset(Assets.candlesImage),
+          Text(
+            "Login",
+            style: TextStyle(
+              fontFamily: Assets.fontFamilyLobster,
+              fontSize: 40.0,
+            ),
+          ),
+          // Image.network(
+          //     "https://cdn.pixabay.com/photo/2020/06/20/18/04/people-5321914_960_720.jpg"),
           TextField(
             controller: unController,
             decoration: InputDecoration(
