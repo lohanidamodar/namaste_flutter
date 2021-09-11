@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:namaste_flutter/res/assets.dart';
 import 'package:namaste_flutter/ui/pages/login_page.dart';
 import 'package:namaste_flutter/ui/pages/profile.dart';
 
@@ -11,7 +12,64 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primaryColor: Colors.red),
+      themeMode: ThemeMode.light,
+      theme: ThemeData(
+        primaryColor: Colors.red,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.red,
+          elevation: 0,
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+            fontWeight: FontWeight.normal,
+            fontSize: 24,
+            fontFamily: Assets.fontFamilyLobster,
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            primary: Colors.red,
+            onPrimary: Colors.white,
+            elevation: 0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+            minimumSize: Size(0, 50),
+            textStyle: TextStyle(
+              fontFamily: Assets.fontFamilyLobster,
+              fontSize: 20,
+            ),
+          ),
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(25),
+            borderSide: BorderSide(
+              color: Colors.red,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(25),
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(25),
+            borderSide: BorderSide(
+              color: Colors.red,
+              width: 2.0,
+            ),
+          ),
+          contentPadding: const EdgeInsets.symmetric(
+            vertical: 8.0,
+            horizontal: 16,
+          ),
+        ),
+      ),
+      darkTheme: ThemeData.dark().copyWith(
+          appBarTheme: AppBarTheme(
+        elevation: 0,
+      )),
       home: LoginPage(),
     );
   }

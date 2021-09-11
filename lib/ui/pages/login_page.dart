@@ -28,6 +28,7 @@ class _LoginPageState extends State<LoginPage> {
               fontSize: 40.0,
             ),
           ),
+          const SizedBox(height: 20),
           // Image.network(
           //     "https://cdn.pixabay.com/photo/2020/06/20/18/04/people-5321914_960_720.jpg"),
           TextField(
