@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../res/assets.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -21,12 +22,58 @@ class _LoginPageState extends State<LoginPage> {
         padding: EdgeInsets.all(16.0),
         children: [
           Image.asset(Assets.candlesImage),
-          Text(
-            "Login",
-            style: TextStyle(
-              fontFamily: Assets.fontFamilyLobster,
-              fontSize: 40.0,
-            ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text(
+                "Login",
+                style: TextStyle(
+                  fontFamily: Assets.fontFamilyLobster,
+                  fontSize: 40.0,
+                ),
+              ),
+              const SizedBox(width: 20.0, height: 100),
+              const Text(
+                'Be',
+                style: TextStyle(fontSize: 43.0),
+              ),
+              const SizedBox(width: 20.0, height: 100.0),
+              DefaultTextStyle(
+                style: TextStyle(
+                  fontSize: 40.0,
+                  fontFamily: Assets.fontFamilyLobster,
+                  color: Colors.black,
+                ),
+                child: AnimatedTextKit(
+                  animatedTexts: [
+                    RotateAnimatedText(
+                      'AWESOME',
+                      textStyle: TextStyle(
+                        fontSize: 40.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                    RotateAnimatedText(
+                      'OPTIMISTIC',
+                      textStyle: TextStyle(
+                        fontSize: 40.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                    RotateAnimatedText(
+                      'DIFFERENT',
+                      textStyle: TextStyle(
+                        fontSize: 40.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                  onTap: () {
+                    print("Tap Event");
+                  },
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: 20),
           // Image.network(
